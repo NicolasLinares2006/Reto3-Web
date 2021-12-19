@@ -32,11 +32,12 @@ public class UserController {
      @Autowired
     private UserService userService;
      
-     @GetMapping("/all")
+    @GetMapping("/all")
     public List<User> getAll() {
         return userService.getAll();
     }
-      @PostMapping("/new")
+    
+    @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
     public User create(@RequestBody User user) {
         return userService.create(user);
@@ -52,9 +53,10 @@ public class UserController {
     public boolean delete(@PathVariable("id") int id) {
         return userService.delete(id);
     }
-    @GetMapping("/{email}/{password}")
-    public User authenticateUser(@PathVariable("email") String email, @PathVariable("password") String password) {
-        return userService.authenticateUser(email, password);
+
+    @GetMapping("/{id}")
+    public User searchUser(@PathVariable("id") int id) {
+        return userService.searchUser(id);
     }
       @GetMapping("/emailexist/{email}")
     public boolean emailExists(@PathVariable("email") String email) {

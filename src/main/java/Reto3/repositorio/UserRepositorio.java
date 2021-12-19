@@ -45,10 +45,8 @@ public class UserRepositorio {
         
         return !usuario.isEmpty();
     }
-    
+   
     public Optional<User> authenticateUser(String email, String password) {
         return userCrudRepository.findByEmailAndPassword(email, password);
     }
-     
-     
 }

@@ -25,7 +25,6 @@ public class UserService {
     }
 
     public Optional<User> getUser(int id) {
-        
         return userRepository.getUser(id);
     }
 
@@ -103,6 +102,11 @@ public class UserService {
         } else {
             return usuario.get();
         }
+    }
+    
+    public User searchUser(int id) {
+        Optional<User> usuario = userRepository.getUser(id);
+            return usuario.get();
     }
     
 }

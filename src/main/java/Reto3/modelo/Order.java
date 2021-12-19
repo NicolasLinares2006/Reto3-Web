@@ -25,7 +25,7 @@ public class Order {
     private Date registerDay;
     private String status;
     private User salesMan;
-    private Map<String, Products> products;
-    private Map<String, String> quantities;
+    private Map<Integer, Products> products;
+    private Map<Integer, Integer> quantities;
 
 }
